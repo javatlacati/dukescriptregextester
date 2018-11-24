@@ -230,6 +230,20 @@
   </dependencies>
   <profiles>
       <profile>
+          <id>fxbrwsr</id>
+          <activation>
+              <activeByDefault>true</activeByDefault>
+          </activation>
+          <dependencies>
+              <dependency>
+                  <groupId>org.netbeans.html</groupId>
+                  <artifactId>net.java.html.boot.fx</artifactId>
+                  <version>${net.java.html.version}</version>
+                  <scope>compile</scope>
+              </dependency>
+          </dependencies>
+      </profile>
+      <profile>
           <id>desktop</id>
           <dependencies>
               <dependency>
