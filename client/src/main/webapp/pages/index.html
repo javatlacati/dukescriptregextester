@@ -4,14 +4,15 @@
     <head>
         <title>Java Regex tester</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link type="text/css" rel="stylesheet" href="level.min.css">
     </head>
 
     <body class="lv-row-multiple color-light is-fluid-container is-center">
-        <h1 class="is-text-info is-block is-text-center is-text-bolder padding-2">Java Regex Tester</h1>
-        <div class="tablet-is-half color-cloud overflow-y is-shadow-l-b">
+        <h1 class="is-text-info mobile-is-block is-text-center is-text-bolder padding-2">Java Regex Tester</h1>
+        <div class="mobile-is-block tablet-15 color-cloud overflow-y is-shadow-l-b">
             <div class="lv-row">
-                <div class="lv-column desktop-20 padding-05">
+                <div class="lv-column padding-05">
                     <label class="opacity-05">Test case</label>
                     <textarea class="is-material is-dark" data-bind="value: testCase, valueUpdate: 'afterkeydown'" placeholder="Write your test case text..."></textarea>
                 </div>
@@ -27,7 +28,7 @@
                 </div>
             </div>
             <div class="lv-row">
-                <div class="lv-column desktop-5 is-center padding-05">
+                <div class="lv-column is-center padding-05">
                     <pre data-bind="text: matches() ? 'Match':'No match', valueUpdate: 'input',style: { color: matches() ? 'green' : 'red' }"></pre>
                     <div class="lv-checkbox is-check">
                         <input id="testReplace" type="checkbox" data-bind="checked: displayReplacement" />
@@ -35,7 +36,7 @@
                         <span>Test Regex Replacement</span>
                     </div>
                 </div>
-                <div class="lv-column desktop-5 is-center padding-05">
+                <div class="lv-column is-center padding-05">
                     <div class="lv-checkbox is-check">
                         <input id="testMatch" type="checkbox" data-bind="checked: displayMatches" />
                         <label for="testMatch"></label>
