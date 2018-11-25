@@ -1,0 +1,60 @@
+<idea-plugin>
+    <id>org.javapro.idea</id>
+    <name>Dukescript Java Regex Tester plugin</name>
+    <version>0.9</version>
+    <vendor email="scherzo16@gmail.com" url="http://www.javapro.org">javatlacati from Java Pro</vendor>
+
+    <description><![CDATA[
+      <h2>Visual interactive plugin using Dukescript</h2>
+      It has the following characteristics:
+      <ol>
+        <li><a href="https://www.regular-expressions.info/unicode.html">Unicode categories</a> support such as <pre>\p{Letter}</pre> or <pre>\p{InGreek}</pre></li>
+        <li>Pattern modifiers at regex such as:
+            <ol>
+                <li>case insensitive matching trough prefixing with <pre>(?i)</pre></li>
+            </ol>
+        </li>
+        <li>hexadecimal character matching such as <pre>[\x7F-\xFF]</pre></li>
+        <li>linebreaks trough <pre>\n</pre></li>
+      </ol>
+      <br>
+      <h2>Credits</h2>
+      Concept and development: Ruslan López Carro
+      UI improvements: Leonardo Quintana Juárez
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Proof of concept
+      <br>
+      If you want to support this plugin or contribute for my rehabilitation therapies don't hesitate to <a href="paypal.me/javatlacati">Donate</a>
+      <br>
+      <br>
+      This plugin was possible due the following technologies:
+      <ul>
+        <li><a href="http://dukescript.com/">Dukescript</a></li>
+        <li><a href="https://jorgeantrax.github.io/level-docs/">Level CSS</a></li>
+        <li>IntelliJ IDEA SDK from Jetbrains</li>
+      </ul>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="145.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!--<depends>com.intellij.modules.lang</depends>-->
+    <!--avalible if java language support is installed-->
+    <depends>com.intellij.modules.java</depends>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Dukescript Java Regex Tester plugin" secondary="true" anchor="right"
+                    factoryClass="org.javapro.regextester.MyToolWindowFactory"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+
+</idea-plugin>

@@ -62,7 +62,7 @@ final class RegexTester {
      * Called when the page is ready.
      */
     static void onPageLoad(PlatformServices services) {
-        RegexTesting rgxt = new RegexTesting("", "", "", "", true, false);
+        RegexTesting rgxt = new RegexTesting("", "", "", "", false, false);
         rgxt.applyBindings();
     }
 }

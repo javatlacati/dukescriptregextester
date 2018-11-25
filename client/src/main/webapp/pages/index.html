@@ -3,13 +3,14 @@
     <head>
         <title>Java Regex tester</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="level.min.css">
+        <link type="text/css" rel="stylesheet" href="level.min.css">
+        <link type="text/css" rel="stylesheet" href="app.css">
     </head>
     <body>
     <row>
         <column class="desktop-20">
             <label>Test case</label>
-            <textarea
+            <textarea class="desktop-19"
                 data-bind="value: testCase, valueUpdate: 'afterkeydown'"
                 placeholder="Write your test case text...">
             </textarea>
@@ -31,20 +32,22 @@
         </column>
     </row>
     <row>
+        <pre data-bind="text: matches() ? 'Match':'No match', valueUpdate: 'input',style: { color: matches() ? 'green' : 'red' }"></pre>
+    </row>
+    <row>
         <column class="desktop-5 is-center">
-            <pre data-bind="text: matches() ? 'Match':'No match', valueUpdate: 'input',style: { color: matches() ? 'green' : 'red' }"></pre>
             <label><input type="checkbox" data-bind="checked: displayReplacement" /> Test Regex Replacement</label>
         </column>
         <column class="desktop-5 is-center">
             <label><input type="checkbox" data-bind="checked: displayMatches" />Show partial matches</label>
-            <input type="submit" value="calculate partial matches" data-bind="visible: displayMatches, click: allMatches">
+            <input type="submit" value="Find" data-bind="visible: displayMatches, click: allMatches">
         </column>
     </row>
     <row>
         <column data-bind="if: displayMatches" class="desktop-15 is-center">
             <label>Partial matches</label>
             <ul data-bind="foreach: partialMatches">
-               <li> 
+               <li>
                  <p data-bind="text: $data"></p>
                </li>
             </ul>

@@ -24,6 +24,7 @@
         <presenters.version>1.5.2</presenters.version>
         <enforcer.fail>false</enforcer.fail>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--<netbeans.inspect.port>63547</netbeans.inspect.port>-->
     </properties>
     <dependencyManagement>
         <dependencies>
