@@ -12,6 +12,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.text.FontSmoothingType;
+import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 import net.java.html.boot.fx.FXBrowsers;
 import org.jetbrains.annotations.NotNull;
@@ -56,7 +57,8 @@ public class MyToolWindowFactory implements ToolWindowFactory {
 
     private Scene createScene() {
         Group root = new Group();
-        Scene scene = new Scene(root, 800.0, 1600.0, Color.ALICEBLUE);
+        final double rem = Math.rint(new Text("").getLayoutBounds().getHeight());
+        Scene scene = new Scene(root, 500.0 * rem, 250.0 * rem, Color.ALICEBLUE);
         WebView webView = new WebView();
         webView.setFontSmoothingType(FontSmoothingType.LCD);
         root.getChildren().add(webView);

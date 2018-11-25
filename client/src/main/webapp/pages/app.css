@@ -1,3 +1,7 @@
-.text{
+.text {
     -fx-font-smoothing-type: gray;
+}
+
+.popover > .border {
+    -fx-stroke-width: 1;
 }

@@ -19,8 +19,11 @@
       </ol>
       <br>
       <h2>Credits</h2>
-      Concept and development: Ruslan López Carro
-      UI improvements: Leonardo Quintana Juárez
+      <br>
+      <b>Concept and development:</b> Ruslan López Carro
+      <br>
+      <b>UI improvements:</b> Leonardo Quintana Juárez
+      <br>
     ]]></description>
 
     <change-notes><![CDATA[
@@ -41,15 +44,12 @@
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
     <idea-version since-build="145.0"/>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
-    <!--<depends>com.intellij.modules.lang</depends>-->
     <!--avalible if java language support is installed-->
     <depends>com.intellij.modules.java</depends>
 
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow id="Dukescript Java Regex Tester plugin" secondary="true" anchor="right"
+        <toolWindow id="Java Regex Tester" secondary="true" anchor="bottom"
                     factoryClass="org.javapro.regextester.MyToolWindowFactory"/>
     </extensions>
 
