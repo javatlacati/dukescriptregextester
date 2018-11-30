@@ -26,9 +26,9 @@
     <intellij.version>13.0.2</intellij.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <ij.plugin>true</ij.plugin>
-    <INTELLIJ_HOME>C:/Users/ruslan.lopez/.IntelliJIdea2018.2/system/plugins-sandbox</INTELLIJ_HOME>
-    <javafx.systemPath>C:/Program Files/Java/jdk1.8.0_111/jre</javafx.systemPath>
-    <idea.systemPath>C:/Program Files/JetBrains/IntelliJ IDEA 2018.2.6</idea.systemPath>
+    <INTELLIJ_HOME>C:\Users\ruslan.lopez\.IntelliJIdea2018.3\system\plugins-sandbox</INTELLIJ_HOME>
+    <javafx.systemPath>C:\Program Files\javafx-sdk-11.0.1</javafx.systemPath>
+    <idea.systemPath>C:\Program Files\JetBrains\IntelliJ IDEA 2018.3</idea.systemPath>
     <!-- NETBEANS CONFIG -->
     <netbeans.compile.on.save>all</netbeans.compile.on.save>
     <!--<project.mainclass>org.javapro.regextester.Main</project.mainclass>-->
@@ -278,6 +278,24 @@
         <scope>system</scope>
         <systemPath>${idea.systemPath}/lib/annotations.jar</systemPath>
     </dependency>
+      <dependency>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-controls</artifactId>
+          <version>11</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-swing</artifactId>
+          <version>11</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-web</artifactId>
+          <version>11</version>
+          <scope>provided</scope>
+      </dependency>
   </dependencies>
   <profiles>
       <profile>
@@ -297,6 +315,12 @@
               <resources>
                   <resource>
                       <directory>src/main/webapp</directory>
+                      <includes>
+                          <include>**/*.*</include>
+                      </includes>
+                  </resource>
+                  <resource>
+                      <directory>src/main/resources</directory>
                       <includes>
                           <include>**/*.*</include>
                       </includes>
