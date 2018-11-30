@@ -12,9 +12,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="dukescriptregextester" target="1.8" />
       <module name="regextester" target="1.7" />
       <module name="regextester-js" target="1.7" />
+      <module name="regextester-pom" target="1.8" />
       <module name="regextester-web" target="1.7" />
     </bytecodeTargetLevel>
   </component>

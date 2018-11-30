@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/dukescriptregextester.iml" filepath="$PROJECT_DIR$/.idea/dukescriptregextester.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client.iml" filepath="$PROJECT_DIR$/.idea/modules/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dukescriptregextester.iml" filepath="$PROJECT_DIR$/.idea/modules/dukescriptregextester.iml" />
       <module fileurl="file://$PROJECT_DIR$/client/regextester.iml" filepath="$PROJECT_DIR$/client/regextester.iml" />
       <module fileurl="file://$PROJECT_DIR$/js/regextester-js.iml" filepath="$PROJECT_DIR$/js/regextester-js.iml" />
+      <module fileurl="file://$PROJECT_DIR$/regextester-pom.iml" filepath="$PROJECT_DIR$/regextester-pom.iml" />
       <module fileurl="file://$PROJECT_DIR$/client-web/regextester-web.iml" filepath="$PROJECT_DIR$/client-web/regextester-web.iml" />
     </modules>
   </component>
