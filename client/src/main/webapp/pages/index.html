@@ -1,78 +1,113 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Java Regex tester</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link type="text/css" rel="stylesheet" href="level.min.css">
-    </head>
+<head>
+    <title>Java Regex tester</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="level.min.css">
+</head>
 
-    <body class="lv-row-multiple color-light is-fluid-container is-center">
-        <h1 class="is-text-info mobile-is-block is-text-center is-text-bolder padding-2">Java Regex Tester</h1>
-        <div class="mobile-is-block tablet-15 color-cloud overflow-y is-shadow-l-b">
-            <div class="lv-row">
-                <div class="lv-column padding-05">
-                    <label class="opacity-05">Test case</label>
-                    <textarea class="is-material is-dark" data-bind="value: testCase, valueUpdate: 'afterkeydown'" placeholder="Write your test case text..."></textarea>
-                </div>
-            </div>
-            <div class="lv-row">
-                <div class="lv-column tablet-is-half padding-05">
-                    <label class="opacity-05">Regex</label>
-                    <textarea class="is-material is-info" data-bind="value: regexText, valueUpdate: 'afterkeydown'" placeholder="Write your Java RegExp here..."></textarea>
-                </div>
-                <div class="lv-column tablet-is-half padding-05">
-                    <label class="opacity-05">Escaped Regex</label>
-                    <textarea class="is-material is-info" data-bind="text: escapeRegexText,valueUpdate: 'afterkeydown'">,valueUpdate: 'afterkeydown', event: {'keydown': unEscapeRegexText()}</textarea>
-                </div>
-            </div>
-            <div class="lv-row">
-                <div class="lv-column is-center padding-05">
-                    <pre data-bind="text: matches() ? 'Match':'No match', valueUpdate: 'input',style: { color: matches() ? 'green' : 'red' }"></pre>
-                    <div class="lv-checkbox is-check">
-                        <input id="testReplace" type="checkbox" data-bind="checked: displayReplacement" />
-                        <label for="testReplace"></label>
-                        <span>Test Regex Replacement</span>
-                    </div>
-                </div>
-                <div class="lv-column is-center padding-05">
-                    <div class="lv-checkbox is-check">
-                        <input id="testMatch" type="checkbox" data-bind="checked: displayMatches" />
-                        <label for="testMatch"></label>
-                        <span>Show partial matches</span>
-                    </div>
-                </div>
-            </div>
-            <div class="lv-row is-center padding-1">
-                <input class="lv-button is-info-outline" type="submit" value="calculate partial matches" data-bind="visible: displayMatches, click: allMatches">
-            </div>
-            <div class="lv-row">
-                <div data-bind="if: displayMatches" class="lv-column desktop-15 is-center padding-05">
-                    <label class="opacity-05">Partial matches</label>
-                    <ul data-bind="foreach: partialMatches">
-                        <li>
-                            <p data-bind="text: $data"></p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="lv-row">
-                <div data-bind="if: displayReplacement" class="lv-column padding-05">
-                    <label class="opacity-05">replacement regex</label>
-                    <textarea class="is-material is-success" data-bind="value: replacementText, valueUpdate: 'afterkeydown'" placeholder="Write the replacement regex..."></textarea>
-                    <br>
-                    <pre data-bind="text: replaced"></pre>
-                </div>
+<body class="lv-row-multiple color-light is-fluid-container is-center">
+<div class="mobile-is-block tablet-15 color-cloud overflow-y is-shadow-l-b container">
+    <div class="lv-row">
+        <div class="lv-column padding-05 ">
+            <label class="opacity-05">Test case</label>
+            <textarea class="is-material is-dark input is-success"
+                      data-bind="value: testCase, valueUpdate: 'afterkeydown'"
+                      placeholder="Write your test case text..."></textarea>
+        </div>
+    </div>
+    <div class="lv-row">
+        <div class="lv-column tablet-is-half padding-05 ">
+            <label class="opacity-05">Regex</label>
+            <textarea class="is-material is-info input is-success"
+                      data-bind="value: regexText, valueUpdate: 'afterkeydown'"
+                      placeholder="Write your Java RegExp here..."></textarea>
+        </div>
+        <div class="lv-column tablet-is-half padding-05 ">
+            <label class="opacity-05">Escaped Regex</label>
+            <textarea class="is-material is-info input " data-bind="text: escapeRegexText,valueUpdate: 'afterkeydown'">,valueUpdate: 'afterkeydown', event: {'keydown': unEscapeRegexText()}</textarea>
+        </div>
+    </div>
+    <div class="lv-row">
+        <div class="lv-column is-center padding-05">
+            <pre data-bind="text: matches() ? 'Match':'No match', valueUpdate: 'input',style: { color: matches() ? 'green' : 'red' }"></pre>
+            <div class="lv-checkbox is-check">
+                <input id="testReplace" type="checkbox" data-bind="checked: displayReplacement" />
+                <label for="testReplace"></label>
+                <span>Test Regex Replacement</span>
+                <!--<label for="testReplace">-->
+                    <!--<input id="testReplace" type="checkbox" class="checkbox" data-bind="checked: displayReplacement"/>-->
+                    <!--<span>Test Regex Replacement</span>-->
+                <!--</label>-->
             </div>
         </div>
-        <div class="lv-row padding-2">
-            <div class="lv-column tablet-is-half is-text-center is-small opacity-05">
-                Java Regex Tester &copy 2018 desarrollado por
-                <a href="https://www.github.com/javatlacati/">javatlacati</a>. Frontend design por
-                <a href="https://github.com/JorgeAntrax/level/">Level CSS</a>
+        <div class="lv-column is-center padding-05">
+            <div class="lv-checkbox is-check">
+                <input id="testMatch" type="checkbox" data-bind="checked: displayMatches" />
+                <label for="testMatch"></label>
+                <span>Show partial matches</span>
+                <!--<label for="testMatch">-->
+                    <!--<input id="testMatch" type="checkbox" class="checkbox" data-bind="checked: displayMatches"/>-->
+                    <!--<span>Show partial matches</span>-->
+                <!--</label>-->
             </div>
         </div>
-        <!-- ${browser.bootstrap} -->
-    </body>
+    </div>
+    <div class="lv-row is-center padding-1">
+        <input class="lv-button is-info-outline btn is-primary" type="submit" value="calculate partial matches"
+               data-bind="visible: displayMatches, click: allMatches">
+    </div>
+    <div class="lv-row">
+        <div data-bind="if: displayMatches" class="lv-column desktop-15 is-center padding-05">
+            <label class="opacity-05">Partial matches</label>
+            <ul data-bind="foreach: partialMatches">
+                <li>
+                    <p data-bind="text: $data"></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="lv-row">
+        <div data-bind="if: displayReplacement" class="lv-column padding-05 ">
+            <label class="opacity-05">replacement regex</label>
+            <textarea class="is-material is-success input"
+                      data-bind="value: replacementText, valueUpdate: 'afterkeydown'"
+                      placeholder="Write the replacement regex..."></textarea>
+            <br>
+            <pre data-bind="text: replaced"></pre>
+        </div>
+    </div>
+</div>
+<div class="lv-row padding-2">
+    <div class="lv-column tablet-is-half is-text-center is-small opacity-05 container with-title">
+        <h3 class="title">Appeareance</h3>
+        <a href="#" class="radio" onclick="changeCSS('level.min.css', 0);">Levelcss</a>
+        <a href="#" class="radio" onclick="changeCSS('nes.min.css', 0);">Nes</a>
+    </div>
+</div>
+<div class="lv-row padding-2">
+    <span class="nes-logo"></span>
+    <div class="lv-column tablet-is-half is-text-center is-small opacity-05">
+        Concept and development: <a href="https://www.github.com/javatlacati/">javatlacati</a>.
+        Some UI improvements: <a href="https://github.com/JorgeAntrax">JorgeAntrax</a>
+    </div>
+</div>
+<script>
+    function changeCSS(cssFile, cssLinkIndex) {
+
+        var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+
+        var newlink = document.createElement("link");
+        newlink.setAttribute("rel", "stylesheet");
+        newlink.setAttribute("type", "text/css");
+        newlink.setAttribute("href", cssFile);
+
+        document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+    }
+</script>
+<!-- ${browser.bootstrap} -->
+</body>
 </html>

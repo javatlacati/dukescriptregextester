@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>org.javapro.idea</id>
-    <name>Dukescript Java Regex Tester plugin</name>
+    <name>Dukescript Java Regex Tester</name>
     <version>0.9</version>
     <vendor email="scherzo16@gmail.com" url="http://www.javapro.org">javatlacati from Java Pro</vendor>
 
@@ -22,7 +22,7 @@
       <br>
       <b>Concept and development:</b> Ruslan López Carro
       <br>
-      <b>UI improvements:</b> Leonardo Quintana Juárez
+      <b>Some UI improvements:</b> Leonardo Quintana Juárez
       <br>
     ]]></description>
 
@@ -36,7 +36,9 @@
       <ul>
         <li><a href="http://dukescript.com/">Dukescript</a></li>
         <li><a href="https://jorgeantrax.github.io/level-docs/">Level CSS</a></li>
+        <li><a href="https://bcrikko.github.io/NES.css/">NES CSS</a></li>
         <li>IntelliJ IDEA SDK from Jetbrains</li>
+        <li>Open JavaFx</li>
       </ul>
     ]]>
     </change-notes>
