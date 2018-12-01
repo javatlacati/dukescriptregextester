@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>org.javapro.idea</id>
     <name>Dukescript Java Regex Tester</name>
-    <version>0.9</version>
+    <version>0.9.5</version>
     <vendor email="scherzo16@gmail.com" url="http://www.javapro.org">javatlacati from Java Pro</vendor>
 
     <description><![CDATA[
