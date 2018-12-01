@@ -28,30 +28,32 @@
         </div>
         <div class="lv-column tablet-is-half padding-05 ">
             <label class="opacity-05">Escaped Regex</label>
-            <textarea class="is-material is-info input " data-bind="text: escapeRegexText,valueUpdate: 'afterkeydown'">,valueUpdate: 'afterkeydown', event: {'keydown': unEscapeRegexText()}</textarea>
+            <!--<textarea class="is-material is-info input " data-bind="text: escapeRegexText,valueUpdate: 'afterkeydown'">,valueUpdate: 'afterkeydown', event: {'keydown': unEscapeRegexText()}</textarea>-->
+            <p class="is-material is-info input " data-bind="text: escapeRegexText,valueUpdate: 'input'">,valueUpdate:
+                'afterkeydown', event: {'keydown': unEscapeRegexText()}</p>
         </div>
     </div>
     <div class="lv-row">
         <div class="lv-column is-center padding-05">
             <pre data-bind="text: matches() ? 'Match':'No match', valueUpdate: 'input',style: { color: matches() ? 'green' : 'red' }"></pre>
             <div class="lv-checkbox is-check">
-                <input id="testReplace" type="checkbox" data-bind="checked: displayReplacement" />
+                <input id="testReplace" type="checkbox" data-bind="checked: displayReplacement"/>
                 <label for="testReplace"></label>
                 <span>Test Regex Replacement</span>
-                <!--<label for="testReplace">-->
-                    <!--<input id="testReplace" type="checkbox" class="checkbox" data-bind="checked: displayReplacement"/>-->
-                    <!--<span>Test Regex Replacement</span>-->
+                <!--<label for="testReplace" class="lv-checkbox">-->
+                <!--<input id="testReplace" type="checkbox" class="checkbox" data-bind="checked: displayReplacement"/>-->
+                <!--<span>Test Regex Replacement</span>-->
                 <!--</label>-->
             </div>
         </div>
         <div class="lv-column is-center padding-05">
             <div class="lv-checkbox is-check">
-                <input id="testMatch" type="checkbox" data-bind="checked: displayMatches" />
+                <input id="testMatch" type="checkbox" data-bind="checked: displayMatches"/>
                 <label for="testMatch"></label>
                 <span>Show partial matches</span>
-                <!--<label for="testMatch">-->
-                    <!--<input id="testMatch" type="checkbox" class="checkbox" data-bind="checked: displayMatches"/>-->
-                    <!--<span>Show partial matches</span>-->
+                <!--<label for="testMatch" class="lv-checkbox">-->
+                <!--<input id="testMatch" type="checkbox" class="checkbox" data-bind="checked: displayMatches"/>-->
+                <!--<span>Show partial matches</span>-->
                 <!--</label>-->
             </div>
         </div>
@@ -91,8 +93,12 @@
 <div class="lv-row padding-2">
     <span class="nes-logo"></span>
     <div class="lv-column tablet-is-half is-text-center is-small opacity-05">
-        Concept and development: <a href="https://www.github.com/javatlacati/">javatlacati</a>.
-        Some UI improvements: <a href="https://github.com/JorgeAntrax">JorgeAntrax</a>
+        <div data-bind="with: 'https://www.github.com/javatlacati/'">
+            Concept and development: <a data-bind="click: $root.openWebBrowser">javatlacati</a>.
+        </div>
+        <div data-bind="with: 'https://github.com/JorgeAntrax'">
+            Some UI improvements: <a data-bind="click: $root.openWebBrowser">JorgeAntrax</a>
+        </div>
     </div>
 </div>
 <script>

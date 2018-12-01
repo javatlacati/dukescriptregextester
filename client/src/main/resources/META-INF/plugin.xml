@@ -24,10 +24,6 @@
       <br>
       <b>Some UI improvements:</b> Leonardo Quintana Juárez
       <br>
-    ]]></description>
-
-    <change-notes><![CDATA[
-      Proof of concept
       <br>
       If you want to support this plugin or contribute for my rehabilitation therapies don't hesitate to <a href="paypal.me/javatlacati">Donate</a>
       <br>
@@ -39,6 +35,13 @@
         <li><a href="https://bcrikko.github.io/NES.css/">NES CSS</a></li>
         <li>IntelliJ IDEA SDK from Jetbrains</li>
         <li>Open JavaFx</li>
+      </ul>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      <ul>
+        <li>Fixed bug that crashed the plugin when clicking profiles hyperlinks anc came back.</li>
+        <li>Modified IDEA file descriptor to enable the maven project to be recognized as plugin module.</li>
       </ul>
     ]]>
     </change-notes>

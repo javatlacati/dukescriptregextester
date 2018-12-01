@@ -68,7 +68,7 @@ public class MyToolWindowFactory implements ToolWindowFactory {
                     @Override
                     public void run() {
                         try {
-                            RegexTester.onPageLoad(null);
+                            RegexTester.onPageLoad(new DesktopServices());
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

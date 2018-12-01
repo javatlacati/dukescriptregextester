@@ -2,7 +2,8 @@ package org.javapro.regextester.js;
 
 import net.java.html.js.JavaScriptBody;
 
-/** Use {@link JavaScriptBody} annotation on methods to
+/**
+ * Use {@link JavaScriptBody} annotation on methods to
  * directly interact with JavaScript. See
  * http://bits.netbeans.org/html+java/1.3/net/java/html/js/package-summary.html
  * to understand how.
@@ -10,6 +11,7 @@ import net.java.html.js.JavaScriptBody;
 public class PlatformServices {
     /**
      * Reads a value from a persistent storage.
+     *
      * @param key the identification for the value
      * @return the value or <code>null</code> if not found
      */
@@ -19,7 +21,8 @@ public class PlatformServices {
 
     /**
      * Puts a value into the persitent storage.
-     * @param key the identification for the value
+     *
+     * @param key   the identification for the value
      * @param value the value to store
      */
     public void setPreferences(String key, String value) {
@@ -29,7 +32,7 @@ public class PlatformServices {
     /**
      * Shows confirmation dialog to the user.
      *
-     * @param msg the message
+     * @param msg      the message
      * @param callback called back when the use accepts (can be null)
      */
     public void confirmByUser(String msg, Runnable callback) {
@@ -38,40 +41,41 @@ public class PlatformServices {
 
     /**
      * Obtains size of the screen.
+     *
      * @return array with two numbers: width and height
      */
     public int[] getScreenSize() {
         Object[] size = screenSizeImpl();
-        return new int[] {
-            ((Number)size[0]).intValue(),
-            ((Number)size[1]).intValue(),
+        return new int[]{
+                ((Number) size[0]).intValue(),
+                ((Number) size[1]).intValue(),
         };
     }
 
-    @JavaScriptBody(args = { "key" }, body =
-        "if (!window.localStorage) return null;\n" +
-        "return window.localStorage.getItem(key);\n"
+    @JavaScriptBody(args = {"key"}, body =
+            "if (!window.localStorage) return null;\n" +
+                    "return window.localStorage.getItem(key);\n"
     )
     private static native String getPreferencesImpl(String key);
 
-    @JavaScriptBody(args = { "key", "value" }, body =
-        "if (!window.localStorage) return;\n" +
-        "window.localStorage.setItem(key, value);\n"
+    @JavaScriptBody(args = {"key", "value"}, body =
+            "if (!window.localStorage) return;\n" +
+                    "window.localStorage.setItem(key, value);\n"
     )
     private static native void setPreferencesImpl(String key, String value);
 
     /**
      * Shows confirmation dialog to the user.
      *
-     * @param msg the message
+     * @param msg      the message
      * @param callback called back when the use accepts (can be null)
      */
     @JavaScriptBody(
             args = {"msg", "callback"},
             javacall = true,
             body = "if (confirm(msg)) {\n"
-            + "  callback.@java.lang.Runnable::run()();\n"
-            + "}\n"
+                    + "  callback.@java.lang.Runnable::run()();\n"
+                    + "}\n"
     )
     static native void confirmImpl(String msg, Runnable callback);
 
@@ -87,4 +91,22 @@ public class PlatformServices {
             + "return [x, y];\n"
     )
     static native Object[] screenSizeImpl();
+
+    /**
+     * Opens a new browser at the specified url.
+     *
+     * @param url the specified url.
+     */
+    public void openWebBrowser(String url) {
+        openWebBrowserImpl(url);
+    }
+
+    @JavaScriptBody(
+            args = {"url"}, body =
+            "window.open(url, \n" +
+                    "                         'newwindow', \n" +
+                    "                         'width=300,height=250'); \n" +
+                    "              return false;"
+    )
+    public static native void openWebBrowserImpl(String url);
 }

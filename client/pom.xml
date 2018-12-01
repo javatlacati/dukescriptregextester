@@ -282,19 +282,19 @@
           <groupId>org.openjfx</groupId>
           <artifactId>javafx-controls</artifactId>
           <version>11</version>
-          <scope>provided</scope>
+          <scope>compile</scope>
       </dependency>
       <dependency>
           <groupId>org.openjfx</groupId>
           <artifactId>javafx-swing</artifactId>
           <version>11</version>
-          <scope>provided</scope>
+          <scope>compile</scope>
       </dependency>
       <dependency>
           <groupId>org.openjfx</groupId>
           <artifactId>javafx-web</artifactId>
           <version>11</version>
-          <scope>provided</scope>
+          <scope>compile</scope>
       </dependency>
   </dependencies>
   <profiles>
