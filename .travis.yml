@@ -2,6 +2,8 @@ language: java
 cache:
   directories:
   - $HOME/.m2
+env:
+  - MOZ_HEADLESS=1
 addons:
   firefox: latest
 # before_install:
