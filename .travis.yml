@@ -5,7 +5,12 @@ cache:
 env:
   - MOZ_HEADLESS=1
 addons:
-  firefox: latest
+  chrome: stable
+before_install:
+  - # start your web application and listen on `localhost`
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost
+#addons:
+#  firefox: latest
 # before_install:
  # - sudo apt-get install jq
  # - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
