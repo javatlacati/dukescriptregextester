@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.jetbrains:util:1.0">
         <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/lib/util.jar!/" />
+          <root url="jar://$MODULE_DIR$/../client/src/lib/lib/util.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,7 +28,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.jetbrains:openapi:1.0">
         <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/" />
+          <root url="jar://$MODULE_DIR$/../client/src/lib/lib/openapi.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -37,7 +37,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.jetbrains:platform:1.0">
         <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/lib/platform-api.jar!/" />
+          <root url="jar://$MODULE_DIR$/../client/src/lib/lib/platform-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -46,20 +46,12 @@
     <orderEntry type="module-library">
       <library name="Maven: com.jetbrains:annotations:1.0">
         <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/lib/annotations.jar!/" />
+          <root url="jar://$MODULE_DIR$/../client/src/lib/lib/annotations.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:win:11" level="project" />
     <orderEntry type="library" name="Maven: org.apidesign.bck2brwsr:emul:rt:0.30" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.html:net.java.html.boot:1.5.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apidesign.bck2brwsr:emul:bck2brwsr:0.30" level="project" />
@@ -74,6 +66,12 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.netbeans.html:net.java.html.boot.fx:1.5.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.openjfx:javafx-web:11" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.openjfx:javafx-web:win:11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.openjfx:javafx-controls:11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.openjfx:javafx-controls:win:11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.openjfx:javafx-graphics:11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.openjfx:javafx-graphics:win:11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.openjfx:javafx-base:11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.openjfx:javafx-base:win:11" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.openjfx:javafx-media:11" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.openjfx:javafx-media:win:11" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apidesign.bck2brwsr:launcher.http:0.30" level="project" />

@@ -28,7 +28,7 @@
     <ij.plugin>true</ij.plugin>
     <INTELLIJ_HOME>C:\Users\ruslan.lopez\.IntelliJIdea2018.3\system\plugins-sandbox</INTELLIJ_HOME>
     <javafx.systemPath>C:\Program Files\javafx-sdk-11.0.1</javafx.systemPath>
-    <idea.systemPath>C:\Program Files\JetBrains\IntelliJ IDEA 2018.3</idea.systemPath>
+    <idea.systemPath>${project.basedir}/src/lib</idea.systemPath>
     <!-- NETBEANS CONFIG -->
     <netbeans.compile.on.save>all</netbeans.compile.on.save>
     <!--<project.mainclass>org.javapro.regextester.Main</project.mainclass>-->
@@ -138,6 +138,26 @@
                   </execution>
               </executions>
           </plugin>
+          <!--<plugin>-->
+              <!--<groupId>com.googlecode.maven-download-plugin</groupId>-->
+              <!--<artifactId>download-maven-plugin</artifactId>-->
+              <!--<version>1.4.1</version>-->
+              <!--<executions>-->
+                  <!--<execution>-->
+                      <!--&lt;!&ndash; the wget goal actually binds itself to this phase by default &ndash;&gt;-->
+                      <!--<phase>process-resources</phase>-->
+                      <!--<goals>-->
+                          <!--<goal>wget</goal>-->
+                      <!--</goals>-->
+                      <!--<configuration>-->
+                          <!--<url>https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/idea/ideaIC/2018.3/ideaIC-2018.3.zip</url>-->
+                          <!--<outputFileName>ideaIC-2018.3.zip</outputFileName>-->
+                          <!--&lt;!&ndash; default target location, just to demonstrate the parameter &ndash;&gt;-->
+                          <!--<outputDirectory>${idea.systemPath}</outputDirectory>-->
+                      <!--</configuration>-->
+                  <!--</execution>-->
+              <!--</executions>-->
+          <!--</plugin>-->
       </plugins>
   </build>
   <dependencies>
