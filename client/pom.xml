@@ -63,6 +63,9 @@
               <configuration>
                   <source>1.7</source>
                   <target>1.7</target>
+                  <compilerArguments>
+                      <bootclasspath>${sun.boot.class.path}${path.separator}${java.home}/lib/jfxrt.jar</bootclasspath>
+                  </compilerArguments>
               </configuration>
           </plugin>
           <plugin>
@@ -135,25 +138,6 @@
                   </execution>
               </executions>
           </plugin>
-          <!--<plugin>-->
-              <!--<artifactId>maven-assembly-plugin</artifactId>-->
-              <!--<version>2.4</version>-->
-              <!--<executions>-->
-                  <!--<execution>-->
-                      <!--&lt;!&ndash;<id>web-pages</id>&ndash;&gt;-->
-                      <!--<id>distro-assembly</id>-->
-                      <!--<phase>package</phase>-->
-                      <!--<goals>-->
-                          <!--<goal>single</goal>-->
-                      <!--</goals>-->
-                      <!--<configuration>-->
-                          <!--<descriptors>-->
-                              <!--<descriptor>src/main/assembly/webpages.xml</descriptor>-->
-                          <!--</descriptors>-->
-                      <!--</configuration>-->
-                  <!--</execution>-->
-              <!--</executions>-->
-          <!--</plugin>-->
       </plugins>
   </build>
   <dependencies>
@@ -282,19 +266,19 @@
           <groupId>org.openjfx</groupId>
           <artifactId>javafx-controls</artifactId>
           <version>11</version>
-          <scope>compile</scope>
+          <scope>provided</scope>
       </dependency>
       <dependency>
           <groupId>org.openjfx</groupId>
           <artifactId>javafx-swing</artifactId>
           <version>11</version>
-          <scope>compile</scope>
+          <scope>provided</scope>
       </dependency>
       <dependency>
           <groupId>org.openjfx</groupId>
           <artifactId>javafx-web</artifactId>
-          <version>11</version>
-          <scope>compile</scope>
+          <version>${openjfx.version}</version>
+          <scope>provided</scope>
       </dependency>
   </dependencies>
   <profiles>
@@ -352,52 +336,12 @@
                       <groupId>org.apache.maven.plugins</groupId>
                       <artifactId>maven-dependency-plugin</artifactId>
                       <version>${dependency.plugin.version}</version>
-                      <executions>
-                          <!--<execution>-->
-                          <!--<id>unzip-distribution</id>-->
-                          <!--<goals>-->
-                          <!--<goal>unpack-dependencies</goal>-->
-                          <!--</goals>-->
-                          <!--<configuration>-->
-                          <!--<includeArtifactIds>org.jetbrains.intellij-ce</includeArtifactIds>-->
-                          <!--<outputDirectory>${intellij.distribution.extract.path}</outputDirectory>-->
-                          <!--<includes>**/*.jar</includes>-->
-                          <!--</configuration>-->
-                          <!--</execution>-->
-                          <!--<execution>-->
-                          <!--<id>copy-dependencies</id>-->
-                          <!--<phase>prepare-package</phase>-->
-                          <!--<goals>-->
-                          <!--<goal>copy-dependencies</goal>-->
-                          <!--</goals>-->
-                          <!--<configuration>-->
-                          <!--<outputDirectory>${project.build.directory}/${project.build.finalName}.lib</outputDirectory>-->
-                          <!--</configuration>-->
-                          <!--</execution>-->
-                          <!--<execution>-->
-                          <!--<id>include-html</id>-->
-                          <!--<goals>-->
-                          <!--<goal>unpack-dependencies</goal>-->
-                          <!--</goals>-->
-                          <!--<configuration>-->
-                          <!--<includeArtifactIds>dukescript-sample</includeArtifactIds>-->
-                          <!--&lt;!&ndash;<outputDirectory>${intellij.distribution.extract.path}</outputDirectory>&ndash;&gt;-->
-                          <!--<includes>**/*.html</includes>-->
-                          <!--</configuration>-->
-                          <!--</execution>-->
-                      </executions>
                   </plugin>
 
                   <plugin>
                       <groupId>org.apache.maven.plugins</groupId>
                       <artifactId>maven-compiler-plugin</artifactId>
                       <version>${comipler.plugin.version}</version>
-                      <configuration>
-                          <!--<executable>${INTELLIJ_HOME}/bin/javac</executable>-->
-                          <!--<compilerArguments>-->
-                          <!--<extdirs>${intellij.distribution.extract.path}/lib/;${extraClasspath}</extdirs>-->
-                          <!--</compilerArguments>-->
-                      </configuration>
                   </plugin>
                   <plugin>
                       <groupId>org.apache.maven.plugins</groupId>
@@ -532,45 +476,6 @@
                           </archive>
                       </configuration>
                   </plugin>
-                  <!--<plugin>-->
-                      <!--<artifactId>maven-assembly-plugin</artifactId>-->
-                      <!--<version>2.4</version>-->
-                      <!--<executions>-->
-                          <!--<execution>-->
-                              <!--<id>distro-assembly</id>-->
-                              <!--<phase>package</phase>-->
-                              <!--<goals>-->
-                                  <!--<goal>single</goal>-->
-                              <!--</goals>-->
-                              <!--<configuration>-->
-                                  <!--<descriptors>-->
-                                      <!--<descriptor>src/main/assembly/javafx.xml</descriptor>-->
-                                  <!--</descriptors>-->
-                              <!--</configuration>-->
-                          <!--</execution>-->
-                          <!--<execution>-->
-                              <!--<id>web-pages</id>-->
-                              <!--<phase>package</phase>-->
-                              <!--<goals>-->
-                                  <!--<goal>single</goal>-->
-                              <!--</goals>-->
-                              <!--<configuration>-->
-                                  <!--<descriptors>-->
-                                      <!--<descriptor>src/main/assembly/webpages.xml</descriptor>-->
-                                  <!--</descriptors>-->
-                              <!--</configuration>-->
-                          <!--</execution>-->
-                          <!--<execution>-->
-                              <!--<id>make-assembly</id>-->
-                              <!--&lt;!&ndash; bind to the packaging phase &ndash;&gt;-->
-                              <!--<phase>package</phase>-->
-                              <!--<goals>-->
-                                  <!--<goal>single</goal>-->
-                              <!--</goals>-->
-                          <!--</execution>-->
-                      <!--</executions>-->
-                  <!--</plugin>-->
-                  <!-- plugin packaging -->
                   <plugin>
                       <artifactId>maven-assembly-plugin</artifactId>
                       <version>2.4</version>

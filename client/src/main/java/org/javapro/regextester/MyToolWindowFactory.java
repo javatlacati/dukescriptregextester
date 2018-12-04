@@ -8,15 +8,12 @@ import com.intellij.ui.content.ContentFactory;
 import com.intellij.ui.content.ContentManager;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.FontSmoothingType;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 import net.java.html.boot.fx.FXBrowsers;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by Javatlacati on 24/11/2018.
