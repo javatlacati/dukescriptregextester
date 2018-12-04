@@ -41,7 +41,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.jetbrains:util:1.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/lib/lib/util.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/lib/util.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -50,7 +50,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.jetbrains:openapi:1.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/lib/lib/openapi.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/lib/openapi.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -59,7 +59,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.jetbrains:platform:1.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/lib/lib/platform-api.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/lib/platform-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -68,7 +68,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.jetbrains:annotations:1.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/lib/lib/annotations.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/lib/annotations.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

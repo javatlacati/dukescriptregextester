@@ -28,7 +28,7 @@
     <ij.plugin>true</ij.plugin>
     <INTELLIJ_HOME>C:\Users\ruslan.lopez\.IntelliJIdea2018.3\system\plugins-sandbox</INTELLIJ_HOME>
     <javafx.systemPath>C:\Program Files\javafx-sdk-11.0.1</javafx.systemPath>
-    <idea.systemPath>${project.basedir}/src/lib</idea.systemPath>
+    <idea.systemPath>${project.basedir}/lib</idea.systemPath>
     <!-- NETBEANS CONFIG -->
     <netbeans.compile.on.save>all</netbeans.compile.on.save>
     <!--<project.mainclass>org.javapro.regextester.Main</project.mainclass>-->
