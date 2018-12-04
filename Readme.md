@@ -3,7 +3,7 @@ In order to compile you have to download the latest IntelliJ community distro fr
 
 * On Windows:
   ```
-  cd client/src
+  cd client
   if not exist lib mkdir lib
   cd lib
   certutil.exe -urlcache -split -f "https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/idea/ideaIC/VERSION/ideaIC-VERSION.zip" ideaIC-VERSION.zip
@@ -11,5 +11,5 @@ In order to compile you have to download the latest IntelliJ community distro fr
   ```
 * On Linux:
   ```
-  cd client/src
+  cd client
   ```
