@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>org.javapro.idea</id>
     <name>Dukescript Java Regex Tester</name>
-    <version>0.9.6</version>
+    <version>0.9.6.1</version>
     <vendor email="scherzo16@gmail.com" url="http://www.javapro.org">javatlacati from Java Pro</vendor>
 
     <description><![CDATA[
@@ -25,7 +25,7 @@
       <b>Some UI improvements:</b> Leonardo Quintana Juárez
       <br>
       <br>
-      If you want to support this plugin or contribute for my rehabilitation therapies don't hesitate to <a href="paypal.me/javatlacati">Donate</a>
+      If you want to support this plugin or contribute for my rehabilitation therapies don't hesitate to <a href="https://paypal.me/javatlacati">Donate</a>
       <br>
       <br>
       This plugin was possible due the following technologies:
