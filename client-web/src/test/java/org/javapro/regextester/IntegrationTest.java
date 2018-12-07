@@ -2,8 +2,6 @@ package org.javapro.regextester;
 
 import net.java.html.junit.BrowserRunner;
 import net.java.html.junit.HTMLContent;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -68,7 +66,7 @@ import org.junit.runner.RunWith;
 )
 public class IntegrationTest {
     @Test public void testUIModelUI() {
-        RegexTesting model = new RegexTesting("f.o,bar,hello,world",",",",","_",false,false);
+        RegexTesting model = new RegexTesting("f.o,bar,hello,world",",","_",false,false);
         model.applyBindings();
     }
 }

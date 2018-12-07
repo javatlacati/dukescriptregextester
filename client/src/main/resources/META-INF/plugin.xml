@@ -45,6 +45,7 @@
         <li>Fixed donation link on browser.</li>
         <li>Added value generation from regex.</li>
         <li>Two way binding for generated regex.</li>
+        <li>Added demo mode.</li>
       </ul>
     ]]>
     </change-notes>

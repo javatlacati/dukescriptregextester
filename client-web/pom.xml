@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.javapro</groupId>
         <artifactId>regextester-pom</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
 
     <groupId>org.javapro</groupId>
@@ -155,6 +155,26 @@
                 <exclusion>
                     <groupId>org.netbeans.html</groupId>
                     <artifactId>net.java.html.boot.fx</artifactId>
+                </exclusion>
+                <exclusion>
+                        <groupId>com.jetbrains</groupId>
+                        <artifactId>util</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.jetbrains</groupId>
+                    <artifactId>openapi</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.jetbrains</groupId>
+                    <artifactId>platform</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.jetbrains</groupId>
+                    <artifactId>annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.github.mifmif</groupId>
+                    <artifactId>generex</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>

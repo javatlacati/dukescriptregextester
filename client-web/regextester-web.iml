@@ -8,7 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="regextester" />
     <orderEntry type="library" name="Maven: org.netbeans.html:net.java.html:1.5.1" level="project" />
@@ -16,44 +16,6 @@
     <orderEntry type="library" name="Maven: org.netbeans.html:net.java.html.sound:1.5.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.html:ko4j:1.5.1" level="project" />
     <orderEntry type="module" module-name="regextester-js" />
-    <orderEntry type="module-library">
-      <library name="Maven: com.jetbrains:util:1.0">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../client/lib/lib/util.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: com.jetbrains:openapi:1.0">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../client/lib/lib/openapi.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: com.jetbrains:platform:1.0">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../client/lib/lib/platform-api.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: com.jetbrains:annotations:1.0">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../client/lib/lib/annotations.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="Maven: com.github.mifmif:generex:1.0.2" level="project" />
-    <orderEntry type="library" name="Maven: dk.brics.automaton:automaton:1.11-8" level="project" />
     <orderEntry type="library" name="Maven: org.apidesign.bck2brwsr:emul:rt:0.30" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.html:net.java.html.boot:1.5.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apidesign.bck2brwsr:emul:bck2brwsr:0.30" level="project" />

@@ -1,11 +1,14 @@
 package org.javapro.regextester;
 
+import com.mifmif.common.regex.Generex;
 import org.javapro.regextester.js.PlatformServices;
 
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.prefs.Preferences;
 
 public final class DesktopServices extends PlatformServices {
@@ -29,4 +32,24 @@ public final class DesktopServices extends PlatformServices {
         }
     }
 
+    @Override
+    public Set<String> nPossibilities(String regexText) {
+        Set<String> allPossibilities = new HashSet<>();
+        try {
+            Generex generex = new Generex(regexText);
+            for (int i = 0; i < 5; i++) {
+                allPossibilities.add(generex.random());
+            }
+        } catch (IllegalArgumentException iae) {
+            allPossibilities.add(iae.getMessage());
+            return allPossibilities;
+        }
+        return allPossibilities;
+    }
+//
+//    @Override
+//    public String generateExample(String regexText) {
+//        Generex generex = new Generex(regexText);
+//        return generex.random();
+//    }
 }

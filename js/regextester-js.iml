@@ -6,6 +6,7 @@
         <additionalProperties>
           <property key="Export-Package" value="org.javapro.regextester.js" />
           <property key="Bundle-Name" value="regextester JavaScript Libraries" />
+          <property key="Include-Resource" value="org/javapro/regextester/js/randexp.min.js=$MODULE_DIR$/src/main/resources/org/javapro/regextester/js/randexp.min.js" />
         </additionalProperties>
         <additionalJARContents />
       </configuration>
@@ -18,9 +19,10 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/annotations" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.netbeans.html:net.java.html.boot:1.5.1" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.html:net.java.html:1.5.1" level="project" />

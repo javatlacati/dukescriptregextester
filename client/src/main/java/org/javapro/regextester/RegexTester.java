@@ -1,6 +1,5 @@
 package org.javapro.regextester;
 
-import com.mifmif.common.regex.Generex;
 import net.java.html.json.*;
 import org.javapro.regextester.js.PlatformServices;
 
@@ -28,6 +27,10 @@ import java.util.regex.PatternSyntaxException;
 final class RegexTester {
     private PlatformServices services;
 
+    public PlatformServices getServices() {
+        return services;
+    }
+
     @ComputedProperty
     static String replaced(String regexText, String testCase, String replacementText) {
         Pattern pattern = Pattern.compile(regexText);
@@ -49,12 +52,11 @@ final class RegexTester {
         }
     }
 
-    @ComputedProperty
-    static String generateExample(String regexText) {
-
-        Generex generex = new Generex(regexText);
-        return generex.random();
-    }
+//    @ComputedProperty
+//    static String generateExample(String regexText) {
+//        Generex generex = new Generex(regexText);
+//        return generex.random();
+//    }
 
     @ComputedProperty
     static boolean matches(String regexText, String testCase) {
@@ -66,24 +68,23 @@ final class RegexTester {
     @Function
     static void allMatches(RegexTesting model) {
         List<String> allMatches = new ArrayList<>();
-        Matcher m = Pattern.compile(model.getRegexText()).matcher(model.getTestCase());
-        while (m.find()) {
-            allMatches.add(m.group());
+        try {
+            Matcher m = Pattern.compile(model.getRegexText()).matcher(model.getTestCase());
+            while (m.find()) {
+                allMatches.add(m.group());
+            }
+        }catch (PatternSyntaxException pse){
+            allMatches.add(pse.getMessage());
         }
         model.getPartialMatches().clear();
         model.getPartialMatches().addAll(allMatches);
     }
 
     @Function
-    static void nPossibilities(RegexTesting model) {
-        Set<String> allPossibilities = new HashSet<>();
-        try {
-            Generex generex = new Generex(model.getRegexText());
-            for (int i = 0; i < 5; i++) {
-                allPossibilities.add(generex.random());
-            }
-        } catch (IllegalArgumentException iae) {
-            allPossibilities.add(iae.getMessage());
+     void nPossibilities(RegexTesting model) {
+        Set<String> allPossibilities = services.nPossibilities(model.getRegexText());
+        if(null == allPossibilities){
+            allPossibilities = new HashSet<>();
         }
         model.getPossibilities().clear();
         model.getPossibilities().addAll(allPossibilities);
@@ -91,7 +92,6 @@ final class RegexTester {
 
     @Function
     void openWebBrowser(RegexTesting model, String data) { //, PlatformServices services
-//        model.getRegexText();
         services.openWebBrowser(data);
     }
 

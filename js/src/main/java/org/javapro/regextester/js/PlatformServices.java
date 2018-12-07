@@ -1,6 +1,9 @@
 package org.javapro.regextester.js;
 
+import java.util.HashSet;
 import net.java.html.js.JavaScriptBody;
+
+import java.util.Set;
 
 /**
  * Use {@link JavaScriptBody} annotation on methods to
@@ -109,4 +112,25 @@ public class PlatformServices {
                     "              return false;"
     )
     public static native void openWebBrowserImpl(String url);
+
+
+
+    @JavaScriptBody(
+            args = {"regexText"}, body =
+            "console.log('unimplemented')"
+    )
+    public static native void nPossibilitiesImpl(String regexText);
+
+    public Set<String> nPossibilities(String regexText) {
+        Set<String> allPossibilities = new HashSet<>();
+        try {
+            for (int i = 0; i < 5; i++) {
+                allPossibilities.add(RandExp.gen(regexText));
+            }
+        } catch (IllegalArgumentException iae) {
+            allPossibilities.add(iae.getMessage());
+            return allPossibilities;
+        }
+        return allPossibilities;
+    }
 }
