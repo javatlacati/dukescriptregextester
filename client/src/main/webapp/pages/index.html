@@ -28,9 +28,16 @@
         </div>
         <div class="lv-column tablet-is-half padding-05 ">
             <label class="opacity-05">Escaped Regex</label>
+            <textarea class="is-material is-info input " data-bind="textInput:escapedRegexText"></textarea>
+            <!--<p class="is-material is-info input " data-bind="text: escapeRegexText,valueUpdate: 'input'">,valueUpdate:-->
+                <!--'afterkeydown', event: {'keydown': unEscapeRegexText()}</p>-->
+        </div>
+    </div>
+    <div class="lv-row">
+        <div class="lv-column tablet-is-half padding-05 ">
+            <label class="opacity-05">Sample Value</label>
             <!--<textarea class="is-material is-info input " data-bind="text: escapeRegexText,valueUpdate: 'afterkeydown'">,valueUpdate: 'afterkeydown', event: {'keydown': unEscapeRegexText()}</textarea>-->
-            <p class="is-material is-info input " data-bind="text: escapeRegexText,valueUpdate: 'input'">,valueUpdate:
-                'afterkeydown', event: {'keydown': unEscapeRegexText()}</p>
+            <p class="is-material is-info input " data-bind="text: generateExample,valueUpdate: 'input'"></p>
         </div>
     </div>
     <div class="lv-row">
@@ -62,14 +69,18 @@
         <input class="lv-button is-info-outline btn is-primary" type="submit" value="calculate partial matches"
                data-bind="visible: displayMatches, click: allMatches">
     </div>
+    <div class="lv-row is-center padding-1">
+        <input class="lv-button is-info-outline btn is-primary" type="submit" value="sample of possible values"
+               data-bind="click: nPossibilities">
+    </div>
     <div class="lv-row">
         <div data-bind="if: displayMatches" class="lv-column desktop-15 is-center padding-05">
             <label class="opacity-05">Partial matches</label>
-            <ul data-bind="foreach: partialMatches">
+            <ol data-bind="foreach: partialMatches">
                 <li>
                     <p data-bind="text: $data"></p>
                 </li>
-            </ul>
+            </ol>
         </div>
     </div>
     <div class="lv-row">
@@ -80,6 +91,16 @@
                       placeholder="Write the replacement regex..."></textarea>
             <br>
             <pre data-bind="text: replaced"></pre>
+        </div>
+    </div>
+    <div class="lv-row">
+        <div class="lv-column desktop-15 is-center padding-05">
+            <label class="opacity-05">Possibilities</label>
+            <ul data-bind="foreach: possibilities">
+                <li>
+                    <p data-bind="text: $data"></p>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

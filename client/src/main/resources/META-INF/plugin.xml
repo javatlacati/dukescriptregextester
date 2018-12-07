@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>org.javapro.idea</id>
     <name>Dukescript Java Regex Tester</name>
-    <version>0.9.6.1</version>
+    <version>1.0</version>
     <vendor email="scherzo16@gmail.com" url="http://www.javapro.org">javatlacati from Java Pro</vendor>
 
     <description><![CDATA[
@@ -34,6 +34,7 @@
         <li><a href="https://jorgeantrax.github.io/level-docs/">Level CSS</a></li>
         <li><a href="https://bcrikko.github.io/NES.css/">NES CSS</a></li>
         <li><a href="http://kristopolous.github.io/BOOTSTRA.386/">BOOTSTRA.386</a></li>
+        <li><a href="https://github.com/mifmif/Generex/">Generex</a></li>
         <li>IntelliJ IDEA SDK from Jetbrains</li>
         <li>Open JavaFx</li>
       </ul>
@@ -41,8 +42,9 @@
 
     <change-notes><![CDATA[
       <ul>
-        <li>Added readme for manual compilation.</li>
-        <li>Added BOOTSTRA.386 style.</li>
+        <li>Fixed donation link on browser.</li>
+        <li>Added value generation from regex.</li>
+        <li>Two way binding for generated regex.</li>
       </ul>
     ]]>
     </change-notes>

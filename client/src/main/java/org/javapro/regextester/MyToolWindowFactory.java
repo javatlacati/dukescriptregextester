@@ -11,7 +11,6 @@ import javafx.embed.swing.JFXPanel;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.FontSmoothingType;
-import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 import net.java.html.boot.fx.FXBrowsers;
 
@@ -55,8 +54,7 @@ public class MyToolWindowFactory implements ToolWindowFactory {
 
     private Scene createScene() {
         StackPane root = new StackPane();
-        final double rem = Math.rint(new Text("").getLayoutBounds().getHeight());
-        Scene scene = new Scene(root, null); //500.0 * rem, 250.0 * rem, Color.ALICEBLUE
+        Scene scene = new Scene(root, null);
         WebView webView = new WebView();
         webView.setFontSmoothingType(FontSmoothingType.LCD);
         root.getChildren().add(webView);
