@@ -92,6 +92,7 @@
             </ol>
         </div>
     </div>
+
     <div class="lv-row">
         <div data-bind="if: displayReplacement" class="lv-column padding-05 ">
             <label class="opacity-05">replacement regex</label>
@@ -102,12 +103,53 @@
             <pre data-bind="text: replaced"></pre>
         </div>
     </div>
+
+    <div class="lv-row">
+        <div class="lv-column is-center padding-05" data-step="8" data-intro="You can get the capture groups in case you want to extract info">
+            <div class="lv-checkbox is-check"  >
+                <input id="testGroups" type="checkbox" data-bind="checked: displayGroups"/>
+                <label for="testGroups"></label>
+                <span>Show groups</span>
+                <!--<label for="testGroups" class="lv-checkbox">-->
+                <!--<input id="testGroups" type="checkbox" data-bind="checked: displayGroups"/>-->
+                <!--<span>Test Regex Replacement</span>-->
+                <!--</label>-->
+            </div>
+        </div>
+        <div class="lv-column is-center padding-05" data-step="9" data-intro="If you are testing use this experimental feature to generate some valid values">
+            <div class="lv-checkbox is-check">
+                <input id="testGeneration" type="checkbox" data-bind="checked: displayGeneration"/>
+                <label for="testGeneration"></label>
+                <span>Show generation</span>
+                <!--<label for="testGeneration" class="lv-checkbox">-->
+                <!--<input id="testGeneration" type="checkbox" class="checkbox" data-bind="checked: displayMatches"/>-->
+                <!--<span>Show partial matches</span>-->
+                <!--</label>-->
+            </div>
+        </div>
+    </div>
+
     <div class="lv-row is-center padding-1">
+        <input class="lv-button is-info-outline btn is-primary" type="submit" value="calculate capture groups"
+               data-bind="visible: displayGroups, click: allGroups">
+    </div>
+    <div class="lv-row">
+        <div data-bind="if: displayGroups" class="lv-column desktop-15 is-center padding-05">
+            <label class="opacity-05">Capture groups</label>
+            <ol data-bind="foreach: groupsMatching">
+                <li>
+                    <p data-bind="text: $data"></p>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="lv-row is-center padding-1" data-bind="if: displayGeneration">
         <input class="lv-button is-info-outline btn is-primary" type="submit" value="sample of possible values"
                data-bind="click: nPossibilities">
     </div>
     <div class="lv-row">
-        <div class="lv-column desktop-15 is-center padding-05">
+        <div class="lv-column desktop-15 is-center padding-05" data-bind="if: displayGeneration">
             <label class="opacity-05">Possibilities</label>
             <ul data-bind="foreach: possibilities">
                 <li>
@@ -119,7 +161,7 @@
 </div>
 <div class="lv-row padding-2">
     <div class="lv-column tablet-is-half is-text-center is-small opacity-05 container with-title"
-         data-step="8" data-intro="Are you bored? You can change the appeareance to one of the avalible themes here">
+         data-step="10" data-intro="Are you bored? You can change the appeareance to one of the avalible themes here">
         <h3 class="title">Appeareance</h3>
         <a href="#" class="radio" onclick="changeCSS('level.min.css', 0);">Levelcss</a>
         <a href="#" class="radio" onclick="changeCSS('nes.min.css', 0);">Nes</a>

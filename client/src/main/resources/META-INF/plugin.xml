@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>org.javapro.idea</id>
     <name>Dukescript Java Regex Tester</name>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <vendor email="scherzo16@gmail.com" url="http://www.javapro.org">javatlacati from Java Pro</vendor>
 
     <description><![CDATA[
@@ -42,10 +42,8 @@
 
     <change-notes><![CDATA[
       <ul>
-        <li>Fixed donation link on browser.</li>
-        <li>Added value generation from regex.</li>
-        <li>Two way binding for generated regex.</li>
-        <li>Added demo mode.</li>
+        <li>Support for groups.</li>
+        <li>Groups included in the demo mode.</li>
       </ul>
     ]]>
     </change-notes>

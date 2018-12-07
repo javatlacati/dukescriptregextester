@@ -21,8 +21,11 @@ import java.util.regex.PatternSyntaxException;
         , @Property(name = "replacementText", type = String.class)
         , @Property(name = "partialMatches", type = String.class, array = true)
         , @Property(name = "possibilities", type = String.class, array = true)
+        , @Property(name = "groupsMatching", type = String.class, array = true)
         , @Property(name = "displayReplacement", type = boolean.class)
         , @Property(name = "displayMatches", type = boolean.class)
+        , @Property(name = "displayGroups", type = boolean.class)
+        , @Property(name = "displayGeneration", type = boolean.class)
 })
 final class RegexTester {
     private PlatformServices services;
@@ -73,7 +76,7 @@ final class RegexTester {
             while (m.find()) {
                 allMatches.add(m.group());
             }
-        }catch (PatternSyntaxException pse){
+        } catch (PatternSyntaxException pse) {
             allMatches.add(pse.getMessage());
         }
         model.getPartialMatches().clear();
@@ -81,9 +84,34 @@ final class RegexTester {
     }
 
     @Function
-     void nPossibilities(RegexTesting model) {
+    static void allGroups(RegexTesting model) {
+        List<String> allGroups = new ArrayList<>();
+        try {
+            Matcher m = Pattern.compile(model.getRegexText()).matcher(model.getTestCase());
+
+            int groupsNum = m.groupCount();
+            while (m.find()) {
+                for (int i = 1; i <= groupsNum; i++) {
+                    try {
+                        String group = m.group(i);
+                        allGroups.add(group);
+                    } catch (IllegalStateException ise) {
+                        allGroups.add("No Matches");
+                    }
+                }
+            }
+
+        } catch (PatternSyntaxException pse) {
+            allGroups.add(pse.getMessage());
+        }
+        model.getGroupsMatching().clear();
+        model.getGroupsMatching().addAll(allGroups);
+    }
+
+    @Function
+    void nPossibilities(RegexTesting model) {
         Set<String> allPossibilities = services.nPossibilities(model.getRegexText());
-        if(null == allPossibilities){
+        if (null == allPossibilities) {
             allPossibilities = new HashSet<>();
         }
         model.getPossibilities().clear();
@@ -104,7 +132,7 @@ final class RegexTester {
      * Called when the page is ready.
      */
     static void onPageLoad(PlatformServices services) {
-        RegexTesting model = new RegexTesting("", "", "", false, false);
+        RegexTesting model = new RegexTesting("", "", "", false, false, false, false);
         model.setPreferences(services);
         model.applyBindings();
     }
